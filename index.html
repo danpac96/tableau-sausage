@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analytics Hub 📊✨</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            animation: slideIn 1s ease-out;
+        }
+
+        h1 {
+            margin: 0;
+            color: #2c3e50;
+            font-size: 2.5em;
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            color: #6e8efb;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #a777e3;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #6e8efb;
+            padding-bottom: 10px;
+        }
+
+        .tableau-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            background: #fff;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .tableau-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .stat-card {
+            background: linear-gradient(45deg, #6e8efb, #a777e3);
+            padding: 20px;
+            border-radius: 8px;
+            color: white;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .tableau-fallback {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            background: #f9f9f9;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Data Analytics Hub 📈🚀</h1>
+            <nav>
+                <a href="#overview">Overview</a>
+                <a href="#tableau">Tableau Insights</a>
+                <a href="#stats">Quick Stats</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <section class="section" id="overview">
+            <h2>Welcome to Our Analytics World 🌍✨</h2>
+            <p>Dive into the exciting world of data with us! We bring you cutting-edge insights powered by Tableau and a sprinkle of fun! 🎉</p>
+        </section>
+
+        <section class="section" id="tableau">
+            <h2>Tableau Dashboard Spotlight 📊⭐</h2>
+            <p>Explore our interactive analytics below - your data journey starts here! 🚀</p>
+            <div class="tableau-container" id="tableauEmbed">
+                <iframe 
+                    src="https://public.tableau.com/views/Book2_17437638828060/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="tableau-fallback" id="tableauFallback">
+                <p>Oops! The Tableau dashboard isn’t loading. 😕 <br>
+                <a href="https://public.tableau.com/views/Book2_17437638828060/Dashboard1" target="_blank">Click here</a> to view it directly on Tableau Public!</p>
+                <p><small>Tip: Ensure the dashboard is public and shared on Tableau Public.</small></p>
+            </div>
+        </section>
+
+        <section class="section" id="stats">
+            <h2>Quick Stats Snapshot 📈⚡</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Users</h3>
+                    <p id="userCount">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Data Points</h3>
+                    <p id="dataCount">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Insights</h3>
+                    <p id="insightCount">0</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <h2>Get in Touch 📬😊</h2>
+            <p>Have questions? Reach out at <a href="mailto:info@datahub.com">info@datahub.com</a> or follow us on socials! 🌐</p>
+        </section>
+
+        <footer>
+            <p>© 2025 Data Analytics Hub | Made with ❤ & Data 📊</p>
+        </footer>
+    </div>
+
+    <script>
+        // JavaScript for dynamic stat counting and Tableau fallback
+        function animateCount(elementId, target, duration) {
+            let start = 0;
+            const element = document.getElementById(elementId);
+            const increment = target / (duration / 16);
+            
+            function updateCount() {
+                start += increment;
+                if (start >= target) {
+                    element.textContent = target.toLocaleString();
+                } else {
+                    element.textContent = Math.floor(start).toLocaleString();
+                    requestAnimationFrame(updateCount);
+                }
+            }
+            
+            requestAnimationFrame(updateCount);
+        }
+
+        // Check if Tableau iframe loads successfully
+        function checkTableauLoad() {
+            const iframe = document.querySelector('#tableauEmbed iframe');
+            const fallback = document.getElementById('tableauFallback');
+            
+            iframe.onerror = () => {
+                console.error('Tableau iframe failed to load.');
+                fallback.style.display = 'block';
+                iframe.parentElement.style.display = 'none';
+            };
+
+            iframe.onload = () => {
+                if (!iframe.contentWindow || !iframe.contentWindow.document.body) {
+                    console.warn('Tableau iframe loaded but content is empty.');
+                    fallback.style.display = 'block';
+                    iframe.parentElement.style.display = 'none';
+                }
+            };
+
+            // Fallback if iframe doesn’t load within 5 seconds
+            setTimeout(() => {
+                if (!iframe.contentWindow || iframe.contentWindow.document.readyState !== 'complete') {
+                    console.warn('Tableau iframe timed out.');
+                    fallback.style.display = 'block';
+                    iframe.parentElement.style.display = 'none';
+                }
+            }, 5000);
+        }
+
+        // Start animations and checks when page loads
+        window.onload = () => {
+            animateCount('userCount', 12500, 2000);
+            animateCount('dataCount', 500000, 2000);
+            animateCount('insightCount', 350, 2000);
+            checkTableauLoad();
+        };
+    </script>
+</body>
+</html>
